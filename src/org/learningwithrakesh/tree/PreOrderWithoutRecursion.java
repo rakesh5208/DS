@@ -1,7 +1,11 @@
 package org.learningwithrakesh.tree;
 
 import java.util.Stack;
-
+/**
+ * Using Stack, iterative approach
+ * @author Lenovo
+ *
+ */
 public class PreOrderWithoutRecursion implements TreeTraversal {
 	Stack<Node> stack = new Stack<>();
 
