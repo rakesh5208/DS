@@ -26,12 +26,15 @@ public class BstRun {
 		}
 		bst.print(new InOrder());
 		bst.print(new InOrderWithoutRecursion());
+		bst.print(new InOrderTraversalWithThreadedBinaryTree());
 		bst.print(new PreOrder());
 		bst.print(new PreOrderWithoutRecursion());
 		bst.print(new PostOrder());
 		bst.print(new BreadthFirstSearch());
 		
 		bst.print(new PrintLevelOrderTraversalLineByLine());
+		
+		
 		
 		
 	}
