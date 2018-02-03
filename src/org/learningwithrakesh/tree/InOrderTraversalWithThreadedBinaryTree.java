@@ -28,6 +28,7 @@ public class InOrderTraversalWithThreadedBinaryTree implements TreeTraversal {
 				Node inOrderPredecessor = this.findInOrderPredeccessorOfNode(current);
 				// In-order predecessor node doesn't have right child
 				// point current node as successor node this predecessor node
+				// Using Right threading
 				if (inOrderPredecessor.getRight() == null) {
 					inOrderPredecessor.setRight(current);
 					current = current.getLeft();

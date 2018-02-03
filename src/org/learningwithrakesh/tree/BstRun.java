@@ -24,14 +24,21 @@ public class BstRun {
 		for(int i=0;i<arr.length;i++){
 			bst.add(arr[i]);
 		}
+		// In-order traversals
 		bst.print(new InOrder());
 		bst.print(new InOrderWithoutRecursion());
 		bst.print(new InOrderTraversalWithThreadedBinaryTree());
+		
+		//Pre-order traversals
 		bst.print(new PreOrder());
 		bst.print(new PreOrderWithoutRecursion());
-		bst.print(new PostOrder());
-		bst.print(new BreadthFirstSearch());
+		bst.print(new PreOrderWithThreadedBinaryTree());
 		
+		// post-order traversal
+		bst.print(new PostOrder());
+		
+		//DFS(Depth First Search)or Level Order Traversal
+		bst.print(new BreadthFirstSearch());
 		bst.print(new PrintLevelOrderTraversalLineByLine());
 		
 		
