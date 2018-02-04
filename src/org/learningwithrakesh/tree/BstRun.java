@@ -40,10 +40,8 @@ public class BstRun {
 		
 		//DFS(Depth First Search)or Level Order Traversal
 		bst.print(new BreadthFirstSearch());
+		bst.print(new ReverseLevelOrderTraversal());
 		bst.print(new PrintLevelOrderTraversalLineByLine());
-		
-		
-		
 		
 	}
 }
