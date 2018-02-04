@@ -36,6 +36,7 @@ public class BstRun {
 		
 		// post-order traversal
 		bst.print(new PostOrder());
+		bst.print(new PostOrderUsing2Stack());
 		
 		//DFS(Depth First Search)or Level Order Traversal
 		bst.print(new BreadthFirstSearch());
