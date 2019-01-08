@@ -84,6 +84,9 @@ public class SingleLinkList {
 		}
 	}
 
+	/**
+	 * Method to delete first node from linklist
+	 */
 	public void deleteFirstNode() {
 		if (head != null) {
 			Node tempNode = head;
@@ -93,6 +96,9 @@ public class SingleLinkList {
 		}
 	}
 
+	/**
+	 * Method to delete last node from linklist
+	 */
 	public void deleteLastNode() {
 		if (head != null && head.getNext() != null) {
 			Node tempNode = head;
@@ -103,18 +109,78 @@ public class SingleLinkList {
 			}
 			prevNode.setNext(null);
 			tempNode = null;
-		}else {
+		} else {
 			head = null;
 		}
-		
+	}
 
+	/**
+	 * Delete the element at the given position, Position is 0 based indexing
+	 * 
+	 * @param position: to be deleted at
+	 * @throws LinkListException
+	 */
+	public void deleteAt(int pos) throws LinkListException {
+		int listSize = this.size();
+		if (pos < 0) {
+			throw new LinkListException("Position cann't be negative");
+		} else if (pos >= listSize) {
+			throw new LinkListException("Position cann't be greater than or equal to linklist size : " + listSize);
+		} else {
+			if (pos == 0) {
+				Node toBeDelete = head;
+				head = head.getNext();
+				toBeDelete.setNext(null);
+			} else {
+				Node toBeDelete = head;
+				Node prevNode = null;
+				int i = 0;
+				while (i < pos && toBeDelete != null) {
+					prevNode = toBeDelete;
+					toBeDelete = toBeDelete.getNext();
+					i++;
+
+				}
+				prevNode.setNext(toBeDelete.getNext());
+				toBeDelete.setNext(null);
+				toBeDelete = null;
+			}
+		}
 	}
 
 	/**
 	 * Clear the linklist
 	 */
 	public void clear() {
-		this.head = null;
+		while (head != null) {
+			Node temp = head.getNext();
+			head = null;
+			head = temp;
+		}
+	}
+
+	/**
+	 * recursive clear
+	 * 
+	 * @param node
+	 */
+	public void deleteAllRecursive(Node node) {
+		if (node == null) {
+			return;
+		}
+		Node temp = node;
+		this.deleteAllRecursive(temp.getNext());
+		temp.setNext(null);
+	}
+
+	/**
+	 * recursive clear linklist
+	 * 
+	 * @param node
+	 */
+	public void deleteAll() {
+		this.deleteAllRecursive(head);
+		head = null;
 	}
 
 	/**
